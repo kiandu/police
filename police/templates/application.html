@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Apply for Police Clearance</title>
+</head>
+<body>
+    <h1>Apply for Police Clearance</h1>
+    {% if user.is_authenticated %}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit Application</button>
+        </form>
+    {% else %}
+        <p>You need to be logged in to apply.</p>
+    {% endif %}
+</body>
+</html>
